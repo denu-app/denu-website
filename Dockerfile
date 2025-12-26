@@ -1,8 +1,22 @@
 # Denu Static Website - Nginx-based static file server
 FROM nginx:alpine
 
+# Build argument for environment (dev or prod)
+ARG BUILD_ENV=dev
+
 # Copy static website files
 COPY . /usr/share/nginx/html/
+
+# Swap HTML files based on environment (prod versions have denu.app URLs)
+RUN if [ "$BUILD_ENV" = "prod" ]; then \
+        cd /usr/share/nginx/html && \
+        cp about.html.prod about.html && \
+        cp contact.html.prod contact.html && \
+        cp index.html.prod index.html && \
+        rm -f *.html.prod; \
+    else \
+        rm -f /usr/share/nginx/html/*.html.prod; \
+    fi
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
