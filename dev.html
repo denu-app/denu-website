@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENU Development - Auto Refresh</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #FF662B 0%, #AB3600 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFB59C;
+        }
+        .links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .links a {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .dev-info {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍊 DENU Development</h1>
+        <p>Auto-refresh enabled for instant updates</p>
+        
+        <div class="status">
+            <div>Next refresh in: <span class="countdown" id="countdown">5</span> seconds</div>
+            <div>Last refresh: <span id="lastRefresh">Just now</span></div>
+        </div>
+        
+        <div class="links">
+            <a href="/static/index.html">🏠 Homepage</a>
+            <a href="/static/about.html">ℹ️ About</a>
+            <a href="/static/contact.html">📞 Contact</a>
+            <a href="/static/privacy.html">🔒 Privacy</a>
+            <a href="/static/terms.html">📋 Terms</a>
+        </div>
+        
+        <div class="dev-info">
+            <p>💡 <strong>Development Mode:</strong> This page refreshes every 5 seconds</p>
+            <p>📝 <strong>Edit files:</strong> Save your HTML/CSS changes and wait for auto-refresh</p>
+            <p>🐳 <strong>Docker:</strong> Your container stays running - no restarts needed!</p>
+        </div>
+    </div>
+
+    <script>
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        const lastRefreshElement = document.getElementById('lastRefresh');
+        
+        function updateCountdown() {
+            countdownElement.textContent = countdown;
+            countdown--;
+            
+            if (countdown < 0) {
+                // Refresh the page
+                window.location.reload();
+            }
+        }
+        
+        function updateLastRefresh() {
+            const now = new Date();
+            lastRefreshElement.textContent = now.toLocaleTimeString();
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        
+        // Update last refresh time
+        updateLastRefresh();
+        
+        // Also refresh on page load
+        window.addEventListener('load', updateLastRefresh);
+    </script>
+</body>
+</html>
