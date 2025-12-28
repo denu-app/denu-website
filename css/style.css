@@ -122,7 +122,7 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background-color: var(--background);
+  background-color: var(--surface);
   color: var(--text-primary);
   line-height: 1.6;
   font-size: 16px;
@@ -529,10 +529,11 @@ body {
 }
 
 .section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
+  font-size: 45px;
+  font-weight: 400;
+  color: var(--on-surface);
+  margin-bottom: 80px;
+  background: var(--surface);
 }
 
 .policy-list {
@@ -574,22 +575,16 @@ body {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 784px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
 .hero h2 {
-  font-size: 1.25rem;
+  font-size: 16px;
   font-weight: 400;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  margin-bottom: 12px;
+  color: var(--on-surface-variant);
 }
 
 .cta-buttons {
@@ -988,7 +983,7 @@ body {
 /* Homepage Hero Section */
 .hero {
   margin-top: 72px;
-  padding: 140px 40px 160px;
+  padding-top: 140px;
   text-align: center;
   background: var(--surface);
   position: relative;
@@ -996,23 +991,24 @@ body {
 }
 
 .hero h1 {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.1;
+  font-size: 57px;
+  font-weight: 400;
   margin-bottom: 12px;
-  max-width: 1000px;
+  color: var(--on-surface);
+  line-height: 1.12281;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--text-primary);
   position: relative;
   z-index: 1;
 }
 
 .hero p {
   font-size: 16px;
-  color: var(--text-secondary);
+  color: var(--on-surface-variant);
   margin-bottom: 12px;
   max-width: 540px;
+  line-height: 1.5;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -1025,7 +1021,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 60px;
   position: relative;
   z-index: 1;
 }
@@ -1065,8 +1060,8 @@ body {
 }
 
 .hero-image {
-  max-width: 1000px;
-  margin: 132px auto 0;
+  max-width: 895px;
+  margin: 80px auto 0;
   position: relative;
   z-index: 1;
 }
@@ -1077,11 +1072,11 @@ body {
 }
 
 .dashboard-section {
-  padding: 80px 0;
+  padding: 80px;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
   margin: 0 auto;
+  background: var(--surface);
 }
 
 .dashboard-cards {
@@ -1093,8 +1088,10 @@ body {
   position: relative;
   z-index: 1;
   padding: 0 48px;
-  width: 100%;
-  align-items: stretch;
+  max-width: 1184px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 .dashboard-card {
@@ -1208,13 +1205,15 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+  background: var(--surface);
 }
 
 .section-title {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 45px;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 60px;
+  background: var(--surface);
 }
 
 /* How It Works */
@@ -1358,7 +1357,7 @@ body {
 
 .blog-category {
   display: inline-block;
-  background: rgba(255, 102, 43, 0.1);
+  background: var(--surface);
   color: var(--primary);
   padding: 4px 12px;
   border-radius: 20px;
@@ -1529,15 +1528,15 @@ header {
 /* New Footer Styles (from index.html) */
 footer {
   background: var(--surface);
-  padding: 60px 40px 20px;
-  margin-top: 80px;
+  padding: 48px;
+  margin: 48px;
+  border-radius: 24px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 40px;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1666,10 +1665,6 @@ footer {
 
 /* Homepage Dark Mode */
 @media (prefers-color-scheme: dark) {
-  .hero h1 {
-    color: var(--text-primary);
-  }
-
   .hero p {
     color: var(--text-secondary);
   }
