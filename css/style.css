@@ -2,46 +2,46 @@
 :root {
   /* Primary Colors - Orange */
   --primary: #FF662B;
-  --primary-container: #AB3600;
+  --primary-container: #ffffede8;
   --on-primary: #FFFFFF;
-  --on-primary-container: #5B1900;
+  --on-primary-container: #AB3600;
   --primary-tint: #FFB59C;
 
   /* Secondary Colors - Purple */
-  --secondary: #592798;
-  --secondary-container: #7242B2;
+  --secondary: #7444B5;
+  --secondary-container: #F2EDFA;
   --on-secondary: #FFFFFF;
-  --on-secondary-container: #E3CBFF;
+  --on-secondary-container: #290055;
 
   /* Tertiary Colors - Blue */
   --tertiary: #1F5FA7;
-  --on-tertiary: #FFFFFF;
+  --on-tertiary: #ffffff;
 
-  /* Surface Colors - Warm peach/beige background everywhere */
-  --surface: #FDF7F4;
-  --surface-container: #FDF7F4;
-  --surface-container-low: #FDF7F4;
+  /* Surface Colors */
+  --surface: #F6F8FA;
+  --surface-container: #F1F3F5;
+  --surface-container-low: #F1F3F5;
   --surface-container-lowest: #FFFFFF;
-  --surface-container-highest: #FDF7F4;
-  --surface-bright: #FDF7F4;
-  --surface-variant: #FFDBCF;
-  --on-surface: #2D2D2D;
-  --on-surface-variant: #5A4139;
+  --surface-container-highest: #DEE2E6;
+  --surface-bright: #FDFDFD;
+  --surface-variant: #F1F3F5;
+  --on-surface: #1A1C1E;
+  --on-surface-variant: #495057;
 
-  /* Background - Warm surface color everywhere */
-  --background: #FDF7F4;
+  /* Background */
+  --background: #F8F9FA;
 
   /* Text Colors */
-  --text-primary: #2D2D2D;
-  --text-secondary: #666666;
+  --text-primary: #000000;
+  --text-secondary: #495057;
   --text-grey: #7D8393;
 
   /* Outline Colors */
-  --outline: #E0E0E0;
-  --outline-variant: #F0F0F0;
+  --outline: #ADB5BD;
+  --outline-variant: #DEE2E6;
 
   /* Error Colors */
-  --error: #BA1A1A;
+  --error: #E03131;
   --on-error: #FFFFFF;
 
   /* Success Colors */
@@ -67,43 +67,43 @@
 [data-theme="dark"] {
   /* Primary Colors - Same orange for both themes */
   --primary: #FF662B;
-  --primary-container: #FFB59C;
+  --primary-container: #4a1200;
   --on-primary: #FFFFFF;
-  --on-primary-container: #5B1900;
+  --on-primary-container: #FFDBCF;
   --primary-tint: #FFB59C;
 
   /* Secondary Colors - Purple */
   --secondary: #D8B9FF;
-  --secondary-container: #7242B2;
-  --on-secondary: #440583;
-  --on-secondary-container: #E3CBFF;
+  --secondary-container: #37006D;
+  --on-secondary: #FFFFFF;
+  --on-secondary-container: #EDDCFF;
 
   /* Tertiary Colors - Blue */
   --tertiary: #A7C8FF;
   --on-tertiary: #003060;
 
   /* Surface Colors - Dark Theme */
-  --surface: #1D100C;
-  --surface-container: #2B1C17;
-  --surface-container-low: #261814;
+  --surface: #1A1C1E;
+  --surface-container: #212427;
+  --surface-container-low: #1C1B1B;
   --surface-container-lowest: #000000;
   --surface-container-highest: #353434;
-  --surface-bright: #463530;
-  --surface-variant: #5A4139;
-  --on-surface: #F8DDD5;
-  --on-surface-variant: #E2BFB4;
+  --surface-bright: #2D3135;
+  --surface-variant: #A7A9AF;
+  --on-surface: #E2E2E6;
+  --on-surface-variant: #C4C7C8;
 
   /* Background */
-  --background: #1D100C;
+  --background: #121416;
 
   /* Text Colors */
   --text-primary: #fff9ff;
-  --text-secondary: #A98A80;
+  --text-secondary: #C4C7C8;
   --text-grey: #7D8393;
 
   /* Outline Colors */
-  --outline: #A98A80;
-  --outline-variant: #5A4139;
+  --outline: #495057;
+  --outline-variant: #343A40;
 
   /* Error Colors */
   --error: #FFB4AB;
@@ -250,8 +250,8 @@ body {
 }
 
 .nav-cta:hover {
-  background: var(--primary-container);
-  color: var(--on-primary-container);
+  background: var(--primary-tint);
+  color: var(--on-primary-tint);
 }
 
 .nav-cta-outline {
@@ -282,7 +282,7 @@ body {
 
 .nav-cta-outline:hover {
   background: var(--surface-container-low);
-  color: var(--text-primary);
+  color: var(--primary);
   border-color: var(--primary);
 }
 
@@ -1025,16 +1025,16 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 60px;
+  margin: 60px;
   position: relative;
   z-index: 1;
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--outline);
+  color: var(--on-surface-variant);
   padding: 16px 24px;
-  border: 1px solid var(--outline-variant);
+  border: 1px solid var(--outline);
   border-radius: 16px;
   text-decoration: none;
   font-weight: 500;
@@ -1043,6 +1043,7 @@ body {
 }
 
 .btn-outline:hover {
+  color: var(--primary);
   border-color: var(--primary);
   background: rgba(255, 102, 43, 0.05);
 }
@@ -1059,8 +1060,8 @@ body {
 }
 
 .btn-primary-large:hover {
-  background: var(--primary-container);
-  color: var(--on-primary-container);
+  background: var(--primary-tint);
+  color: var(--on-primary-tint);
 }
 
 .hero-image {
